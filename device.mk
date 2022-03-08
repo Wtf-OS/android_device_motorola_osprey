@@ -52,6 +52,10 @@ PRODUCT_PACKAGES += \
     init.device.config.sh \
     init.target.rc
 
+# Recorder
+PRODUCT_PACKAGES += \
+    Recorder
+
 # Sensors
 PRODUCT_PACKAGES += \
     akmd09912 \
