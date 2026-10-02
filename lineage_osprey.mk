@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/motorola/osprey/device.mk)
 
 # Inherit some common Lineage stuff.
+# ROM Branding
+TARGET_UNOFFICIAL_BUILD_ID := MrBoombastic
+
 $(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
 
 # Boot animation
@@ -34,10 +37,6 @@ PRODUCT_MODEL := MotoG3
 PRODUCT_BRAND := Motorola
 PRODUCT_MANUFACTURER := Motorola
 
-BUILD_FINGERPRINT := "motorola/osprey_retus/osprey_umts:6.0/MPI24.65-25.1/1:user/release-keys"
+BUILD_FINGERPRINT := "motorola/osprey_reteu/osprey_umts:6.0/MPI24.65-33.1/1:user/release-keys"
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=osprey \
-    TARGET_DEVICE="osprey"
-    PRIVATE_BUILD_DESC="osprey_retus-user 6.0 MPI24.65-25.1 1 release-keys"
 
