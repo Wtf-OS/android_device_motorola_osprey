@@ -4,6 +4,10 @@ PRODUCT_PROPERTY_OVERRIDES +=     persist.vendor.audio.fluence.mode=endfire     
 # Display
 PRODUCT_PROPERTY_OVERRIDES +=     debug.hwui.use_buffer_age=false
 
+# Low-RAM (Android Go) configuration: 1GB RAM device, 258MB routinely
+# in zswap otherwise. Cuts cached processes, animations and heap defaults.
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
 # ADB / Debugging
 PRODUCT_PROPERTY_OVERRIDES +=     persist.sys.usb.config=mtp,adb     persist.service.adb.enable=1     persist.service.debuggable=1
 
