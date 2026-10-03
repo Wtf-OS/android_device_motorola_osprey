@@ -39,4 +39,5 @@ PRODUCT_MANUFACTURER := Motorola
 
 BUILD_FINGERPRINT := "motorola/osprey_reteu/osprey_umts:6.0/MPI24.65-33.1/1:user/release-keys"
 
-
+# Kernel 3.10 has no userfaultfd; keep dexpreopt and runtime GC compatible.
+PRODUCT_ENABLE_UFFD_GC := false
