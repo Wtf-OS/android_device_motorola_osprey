@@ -1,0 +1,4 @@
+<resources>
+    <!-- wcn36xx lacks PMF ciphers; keep saved WPA2 networks on WPA2. -->
+    <bool name="config_wifiSaeUpgradeEnabled">false</bool>
+</resources>

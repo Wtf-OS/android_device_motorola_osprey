@@ -65,3 +65,6 @@ PRODUCT_PACKAGES += \
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/osprey/osprey-vendor.mk)
+
+# Mainline Wi-Fi driver compatibility
+PRODUCT_PACKAGES += OspreyMainlineWifiOverlay

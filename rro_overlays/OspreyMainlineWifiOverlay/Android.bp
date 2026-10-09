@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "OspreyMainlineWifiOverlay",
+    product_specific: true,
+    certificate: "platform",
+}
