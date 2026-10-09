@@ -34,3 +34,5 @@ AB_OTA_UPDATER := false
 BOARD_ROOT_EXTRA_FOLDERS += firmware metadata
 
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/motorola/msm8916-common/mainline-boot/modules/*.ko)
+
+BOARD_VENDOR_SEPOLICY_DIRS += device/motorola/msm8916-common/mainline-boot/sepolicy
