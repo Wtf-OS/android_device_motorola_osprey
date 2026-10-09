@@ -32,3 +32,5 @@ EXCLUDE_SERIF_FONTS := true
 AB_OTA_UPDATER := false
 
 BOARD_ROOT_EXTRA_FOLDERS += firmware metadata
+
+BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/motorola/msm8916-common/mainline-boot/modules/*.ko)
