@@ -1,56 +1,32 @@
-#
-# Copyright (C) 2015-2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-include device/motorola/msm8916-common/BoardConfigCommon.mk
-
--include vendor/motorola/osprey/BoardConfigVendor.mk
-
-DEVICE_PATH := device/motorola/osprey
-
-# Asserts
-TARGET_OTA_ASSERT_DEVICE := osprey,osprey_umts,osprey_u2,osprey_ud2,osprey_uds,osprey_cdma,osprey_sprint,osprey_udstv
-
-# Display
+# Android 16 userspace for osprey with the separately packaged Linux mainline boot.
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a53
+TARGET_BOARD_PLATFORM := msm8916
+TARGET_BOOTLOADER_BOARD_NAME := MSM8916
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_KERNEL := true
+BOARD_USES_QCOM_HARDWARE := false
 TARGET_SCREEN_DENSITY := 320
 
-# Kernel
-TARGET_KERNEL_CONFIG := osprey_defconfig
+# The device has no separate vendor partition.
+TARGET_COPY_OUT_VENDOR := system/vendor
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2432696320
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 4865261568
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_FLASH_BLOCK_SIZE := 131072
+TARGET_USERIMAGES_USE_EXT4 := true
 
-# Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216     # 16384 * 1024 mmcblk0p31
-BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456   # 262144 * 1024 mmcblk0p40
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25165824
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2432696320 # 2375680 * 1024 mmcblk0p41
-BOARD_PERSISTIMAGE_PARTITION_SIZE := 8388608   # 8192 * 1024 mmcblk0p29
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 4865261568 # 4751232 * 1024 mmcblk0p42
+BOARD_WLAN_DEVICE := wlan0
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_HOSTAPD_DRIVER := NL80211
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-# Dexpreopt
-ifeq ($(HOST_OS),linux)
-ifneq ($(TARGET_BUILD_VARIANT),eng)
+MALLOC_SVELTE := true
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_DEBUG_INFO := false
-USE_DEX2OAT_DEBUG := false
-DONT_DEXPREOPT_PREBUILTS := true
-WITH_DEXPREOPT_PIC := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-endif
-endif
-
-# Power
-TARGET_POWERHAL_HEADER_PATH := $(DEVICE_PATH)/power
-
-# Sensors
-BOARD_USES_STML0XX_SENSOR_HUB := true
+EXCLUDE_SERIF_FONTS := true
+AB_OTA_UPDATER := false
