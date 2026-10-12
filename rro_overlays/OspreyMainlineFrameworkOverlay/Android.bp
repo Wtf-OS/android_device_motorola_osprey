@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "OspreyMainlineFrameworkOverlay",
+    product_specific: true,
+    certificate: "platform",
+}

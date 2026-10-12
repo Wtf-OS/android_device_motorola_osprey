@@ -6,3 +6,5 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_PACKAGES += OspreyMainlineWifiOverlay
 PRODUCT_COPY_FILES += \
     vendor/motorola/osprey/proprietary/vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
+PRODUCT_PACKAGES += OspreyMainlineFrameworkOverlay
