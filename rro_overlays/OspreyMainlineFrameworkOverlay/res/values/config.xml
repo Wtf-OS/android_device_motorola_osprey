@@ -44,4 +44,5 @@
     <item>245</item>
     <item>255</item>
   </integer-array>
+  <bool name="config_enableUdcSysfsUsbStateUpdate">true</bool>
 </resources>

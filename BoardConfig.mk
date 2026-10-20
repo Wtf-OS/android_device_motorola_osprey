@@ -41,3 +41,5 @@ DEVICE_MANIFEST_FILE := device/motorola/msm8916-common/mainline-boot/manifest.xm
     device/motorola/msm8916-common/mainline-camera/camera-provider.xml
 
 $(call soong_config_set,minigbm,platform,msm)
+
+include hardware/sony/timekeep/sepolicy/SEPolicy.mk
